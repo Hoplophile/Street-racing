@@ -16,7 +16,10 @@ public class SettingsFragment extends Fragment {
         View android = inflater.inflate(R.layout.fragment_settings, container, false);
 
         //iv.setImageResource(R.drawable.home1);
-
+        //zalozmy ze cos zrobilem
+        //czy ja pracuje na branczu
+        //branczu zwanym settings
+        //dokad zmierzamy
         return android;
     }
 }
