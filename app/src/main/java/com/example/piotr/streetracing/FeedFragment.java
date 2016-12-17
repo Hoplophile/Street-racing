@@ -24,7 +24,7 @@ public class FeedFragment extends ListFragment {
         View android = inflater.inflate(R.layout.fragment_feed, container, false);
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.);
-        ListView listView = (ListView) getView().findViewById(R.id.)
+        ListView listView = (ListView) getView().findViewById(R.id.map_fragment);
 
       /* // Create a progress bar to display while the list loads
         ProgressBar progressBar = new ProgressBar(this);
