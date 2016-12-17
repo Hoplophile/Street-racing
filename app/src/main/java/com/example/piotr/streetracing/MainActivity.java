@@ -8,13 +8,22 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.widget.TableLayout;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;
     MainFragmentPagerAdapter pagerAdapter;
+    LinearLayout linearTab;
+
+    private int[] imageResId = {
+            R.drawable.menuselector_record,
+            R.drawable.menuselector_feed,
+            R.drawable.menuselector_feed,
+            R.drawable.menuselector_feed,
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         checkPermissions();
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+        linearTab = (LinearLayout) findViewById(R.id.linearTab);
         pagerAdapter = new MainFragmentPagerAdapter(getSupportFragmentManager(), MainActivity.this);
         viewPager.setAdapter(pagerAdapter);
 
@@ -31,6 +41,34 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
 
+
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            tabLayout.getTabAt(i).setIcon(imageResId[i]);
+        }
+
+        /*for (int k = 0; k < tabLayout.getTabCount(); k++) {
+            TabLayout.Tab tab1 = tabLayout.getTabAt(k);
+            tab1.setCustomView(pagerAdapter.getTabViewGrey(k, MainActivity.this));
+        }
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager){
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                super.onTabSelected(tab);
+
+                int i = tab.getPosition();
+                tab = tabLayout.getTabAt(i);
+                Log.d("SJ", "zaznaczono"+i);
+                //tab.setCustomView(pagerAdapter.getTabView(i));
+
+                for (int k = 0; k < tabLayout.getTabCount(); k++) {
+                    TabLayout.Tab tab1 = tabLayout.getTabAt(k);
+                    tab1.setCustomView(pagerAdapter.getTabView(k));
+                }
+
+            }
+
+        });*/
 
     }
     private void checkPermissions(){

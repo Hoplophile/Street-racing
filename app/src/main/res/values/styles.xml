@@ -9,8 +9,8 @@
     </style>
 
     <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
-        <item name="tabBackground">@color/colorPrimaryDark</item>
-        <item name="tabIndicatorColor">@color/colorRed</item>
+        <item name="tabBackground">@color/colorWhite</item>
+        <item name="tabIndicatorColor">@color/colorWhite</item>
         <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
     </style>
 
