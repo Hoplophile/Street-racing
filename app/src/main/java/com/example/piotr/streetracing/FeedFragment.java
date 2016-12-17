@@ -9,7 +9,9 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -21,7 +23,8 @@ public class FeedFragment extends ListFragment {
 
         View android = inflater.inflate(R.layout.fragment_feed, container, false);
 
-        //sddddfwfwfie
+        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.);
+        ListView listView = (ListView) getView().findViewById(R.id.)
 
       /* // Create a progress bar to display while the list loads
         ProgressBar progressBar = new ProgressBar(this);
