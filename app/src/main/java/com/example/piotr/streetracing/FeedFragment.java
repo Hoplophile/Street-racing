@@ -21,6 +21,8 @@ public class FeedFragment extends ListFragment {
 
         View android = inflater.inflate(R.layout.fragment_feed, container, false);
 
+        //sddddfwfwfie
+
       /* // Create a progress bar to display while the list loads
         ProgressBar progressBar = new ProgressBar(this);
         progressBar.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
