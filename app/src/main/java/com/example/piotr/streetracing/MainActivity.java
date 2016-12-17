@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.menuselector_record,
             R.drawable.menuselector_feed,
             R.drawable.menuselector_feed,
-            R.drawable.menuselector_feed,
+            R.drawable.menuselector_settings,
 
     };
 
