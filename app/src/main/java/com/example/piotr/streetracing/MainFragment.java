@@ -58,7 +58,7 @@ public class MainFragment extends Fragment {
         Context context = getContext();
         locationServices = LocationServices.getLocationServices(context);
 
-        MapView mapView = (MapView) getView().findViewById(R.id.mapView);
+        MapView mapView = (MapView) android.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
 
         mapView.getMapAsync(new OnMapReadyCallback() {
