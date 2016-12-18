@@ -3,4 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="items">
+        <item>Hoplophile</item>
+        <item>Szymek</item>
+        <item>MQ</item>
+        <item>Filipek</item>
+    </string-array>
 </resources>
+
