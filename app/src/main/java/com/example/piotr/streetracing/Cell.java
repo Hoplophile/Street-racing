@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class Cell extends LinearLayout {
     TextView tvName, date;
-    public Cell(Context context, String name) {
+    public Cell(Context context, String name, String time) {
 
         super(context);
         View.inflate(context, R.layout.cell, this);
@@ -21,6 +21,7 @@ public class Cell extends LinearLayout {
         date = (TextView) findViewById(R.id.date);
 
         tvName.setText(name);
+        date.setText(time);
         Typeface boldTf = Typeface.createFromAsset(context.getAssets(), "fonts/sbold.ttf");
         Typeface regularTf = Typeface.createFromAsset(context.getAssets(), "fonts/regular.ttf");
         tvName.setTypeface(boldTf);
