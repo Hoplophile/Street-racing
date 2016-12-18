@@ -24,7 +24,8 @@
 
         <TextView
             android:layout_width="200dip"
-            android:layout_height="50dip" />
+            android:layout_height="50dip"
+            android:text="Juzernejm"/>
 
 
     </RelativeLayout>
