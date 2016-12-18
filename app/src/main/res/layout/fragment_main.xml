@@ -16,7 +16,7 @@
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="180dip"
         mapbox:center_latitude="50.0647"
         mapbox:center_longitude="19.9450"
         mapbox:style_url="@string/style_mapbox_streets"
@@ -24,10 +24,21 @@
 
     <android.support.design.widget.FloatingActionButton
         android:src="@drawable/mylocation"
+        android:layout_margin="10dp"
         android:id="@+id/location_toggle_fab"
         app:fabSize="normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="150dip"
+        android:layout_height="150dip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dip"
+        android:layout_below="@id/mapView"
+        android:text="START"
+        android:background="@drawable/bt_record"
+        android:id="@+id/record_button" />
 
 
 </RelativeLayout>

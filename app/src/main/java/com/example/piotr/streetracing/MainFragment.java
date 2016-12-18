@@ -51,14 +51,13 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        //MapboxAccountManager.start(this, getString(R.string.access_token));
         MapboxAccountManager.start(getContext(), "pk.eyJ1IjoibXEwMDciLCJhIjoiY2l3dGZrZmxlMDBwbDJ6bWcyZnN4azYzdSJ9.ccx2gEnhH6Bm8QHz0vKMhg");
-        View android = inflater.inflate(R.layout.activity_main, container, false);
+        View android = inflater.inflate(R.layout.fragment_main, container, false);
         insertDummyContactWrapper();
         Context context = getContext();
         locationServices = LocationServices.getLocationServices(context);
 
-        MapView mapView = (MapView) android.findViewById(R.id.mapView);
+        mapView = (MapView)android.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
 
         mapView.getMapAsync(new OnMapReadyCallback() {
@@ -69,14 +68,14 @@ public class MainFragment extends Fragment {
         });
 
 
-        floatingActionButton = (FloatingActionButton) getView().findViewById(R.id.location_toggle_fab);
+        floatingActionButton = (FloatingActionButton) android.findViewById(R.id.location_toggle_fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (map != null) {
                     toggleGps(!map.isMyLocationEnabled());
 
-                    //========================Lokazlicazja
+                    //Lokazlicazja
                     LocationResult locationResult = new LocationResult(){
                         @Override
                         public void gotLocation(Location location){
@@ -220,4 +219,3 @@ public class MainFragment extends Fragment {
         mapView.onSaveInstanceState(outState);
     }
 }
-
