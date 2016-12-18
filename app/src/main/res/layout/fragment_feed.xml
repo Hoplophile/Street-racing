@@ -4,19 +4,13 @@
     android:layout_height="match_parent"
     tools:context=".FeedFragment">
 
-    <TextView
-        android:text="No elo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </TextView>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="140dip"
         android:id="@+id/record1">
         <ImageView
             android:layout_width="100dip"
-            android:layout_height="match_parent"
+            android:layout_height="135dip"
             android:id="@+id/map_box"
             android:background="@color/colorPrimary"
             android:layout_margin="5dip"/>
