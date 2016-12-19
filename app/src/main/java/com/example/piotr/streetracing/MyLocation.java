@@ -14,12 +14,12 @@ import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 
 public class MyLocation {
-    Timer timer1;
-    LocationManager lm;
-    LocationResult locationResult;
-    Context this_context;
-    boolean gps_enabled=false;
-    boolean network_enabled=false;
+    private Timer timer1;
+    private LocationManager lm;
+    private LocationResult locationResult;
+    private Context this_context;
+    private boolean gps_enabled=false;
+    private boolean network_enabled=false;
 
     public boolean getLocation(Context context, LocationResult result) {
         this_context = context;

@@ -1,6 +1,7 @@
 package com.example.piotr.streetracing;
 
 import android.content.Context;
+import android.graphics.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,6 +24,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.MapboxAccountManager;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationListener;
 import com.mapbox.mapboxsdk.location.LocationServices;
 import com.mapbox.mapboxsdk.maps.MapView;
@@ -53,7 +57,7 @@ public class MainFragment extends Fragment {
         super.onCreate(savedInstanceState);
         MapboxAccountManager.start(getContext(), "pk.eyJ1IjoibXEwMDciLCJhIjoiY2l3dGZrZmxlMDBwbDJ6bWcyZnN4azYzdSJ9.ccx2gEnhH6Bm8QHz0vKMhg");
         View android = inflater.inflate(R.layout.fragment_main, container, false);
-        insertDummyContactWrapper();
+        //insertDummyContactWrapper();
         Context context = getContext();
         locationServices = LocationServices.getLocationServices(context);
 
@@ -64,6 +68,11 @@ public class MainFragment extends Fragment {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 map = mapboxMap;
+                /*CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .target(new LatLng(Double.parseDouble(current_location_latitude),Double.parseDouble(current_location_longitude)))
+                        .zoom(17)
+                        .build();
+                mapboxMap.animateCamera(CameraUpdateFacto*/
             }
         });
 
@@ -74,7 +83,6 @@ public class MainFragment extends Fragment {
             public void onClick(View view) {
                 if (map != null) {
                     toggleGps(!map.isMyLocationEnabled());
-
                     //Lokazlicazja
                     LocationResult locationResult = new LocationResult(){
                         @Override
@@ -86,15 +94,12 @@ public class MainFragment extends Fragment {
                         }
                     };
                     MyLocation myLocation = new MyLocation();
-
                     myLocation.getLocation(getActivity(), locationResult);
-
                 }
             }
         });
         return android;
     }
-
 
     private void insertDummyContactWrapper() {
         int hasWriteContactsPermission = ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA);
@@ -165,7 +170,7 @@ public class MainFragment extends Fragment {
             // If we have the last location of the user, we can move the camera to that position.
             Location lastLocation = locationServices.getLastLocation();
             if (lastLocation != null) {
-                //map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastLocation), 16));
+                map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastLocation), 15));
             }
 
             locationServices.addLocationListener(new LocationListener() {
