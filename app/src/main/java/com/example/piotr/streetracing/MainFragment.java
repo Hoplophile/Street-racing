@@ -68,11 +68,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 map = mapboxMap;
-                /*CameraPosition cameraPosition = new CameraPosition.Builder()
-                        .target(new LatLng(Double.parseDouble(current_location_latitude),Double.parseDouble(current_location_longitude)))
-                        .zoom(17)
-                        .build();
-                mapboxMap.animateCamera(CameraUpdateFacto*/
+
             }
         });
 
@@ -82,6 +78,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (map != null) {
+                    MapboxMap mapboxMap;
                     toggleGps(!map.isMyLocationEnabled());
                     //Lokazlicazja
                     LocationResult locationResult = new LocationResult(){
@@ -95,6 +92,11 @@ public class MainFragment extends Fragment {
                     };
                     MyLocation myLocation = new MyLocation();
                     myLocation.getLocation(getActivity(), locationResult);
+                    /*CameraPosition cameraPosition = new CameraPosition.Builder()
+                            .target(new LatLng(Double.parseDouble(current_location_latitude),Double.parseDouble(current_location_longitude)))
+                            .zoom(17)
+                            .build();
+                    mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition),7000);*/
                 }
             }
         });

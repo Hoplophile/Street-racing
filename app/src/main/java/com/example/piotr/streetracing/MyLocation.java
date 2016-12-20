@@ -24,17 +24,14 @@ public class MyLocation {
     public boolean getLocation(Context context, LocationResult result) {
         this_context = context;
         locationResult = result;
-        if (lm == null)
-            lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        if (lm == null) lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 
         try {
             gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        } catch (Exception ex) {
-        }
+        } catch (Exception ex) {}
         try {
             network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-        } catch (Exception ex) {
-        }
+        } catch (Exception ex) {}
 
         if (!gps_enabled && !network_enabled)
             return false;
