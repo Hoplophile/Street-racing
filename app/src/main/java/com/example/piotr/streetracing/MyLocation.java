@@ -1,5 +1,7 @@
 package com.example.piotr.streetracing;
 
+//TA KLASA NIC NIE ROBI
+
 import java.util.Timer;
 import java.util.TimerTask;
 import android.content.Context;

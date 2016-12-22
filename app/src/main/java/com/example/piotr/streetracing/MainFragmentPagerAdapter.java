@@ -15,7 +15,6 @@ public class MainFragmentPagerAdapter extends FragmentPagerAdapter {
             R.drawable.menuselector_record,
             R.drawable.menuselector_feed,
             R.drawable.menuselector_feed,
-
     };
 
     private int[] imageResIdActive = {
@@ -24,11 +23,6 @@ public class MainFragmentPagerAdapter extends FragmentPagerAdapter {
             R.drawable.feedactive,
             R.drawable.feedactive,
     };
-
-
-
-
-
 
     public MainFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
@@ -39,26 +33,17 @@ public class MainFragmentPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                MainFragment tab0 = new MainFragment();
-                return tab0;
+                return new MainFragment();
             case 1:
-                FeedFragment tab1 = new FeedFragment();
-                return tab1;
+                return new FeedFragment();
             case 2:
-                SegmentsFragment tab2 = new SegmentsFragment();
-                return tab2;
+                return new SegmentsFragment();
             case 3:
-                SettingsFragment tab3 = new SettingsFragment();
-                return tab3;
+                return new ProfileFragment();
             default:
                 return null;
-
         }
-
-
     }
-
-
 
     @Override
     public int getCount() {

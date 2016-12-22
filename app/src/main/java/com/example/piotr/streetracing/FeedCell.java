@@ -10,12 +10,13 @@ import android.widget.TextView;
  * Created by Szymon on 18.12.2016.
  */
 
-public class Cell extends LinearLayout {
+public class FeedCell extends LinearLayout {
     TextView tvName, date;
-    public Cell(Context context, String name, String time) {
+
+    public FeedCell(Context context, String name, String time) {
 
         super(context);
-        View.inflate(context, R.layout.cell, this);
+        View.inflate(context, R.layout.feed_cell, this);
 
         tvName = (TextView) findViewById(R.id.username);
         date = (TextView) findViewById(R.id.date);

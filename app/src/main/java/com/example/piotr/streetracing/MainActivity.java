@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             tabLayout.getTabAt(i).setIcon(imageResId[i]);
         }
 
+        viewPager.setCurrentItem(0);
+
         /*for (int k = 0; k < tabLayout.getTabCount(); k++) {
             TabLayout.Tab tab1 = tabLayout.getTabAt(k);
             tab1.setCustomView(pagerAdapter.getTabViewGrey(k, MainActivity.this));

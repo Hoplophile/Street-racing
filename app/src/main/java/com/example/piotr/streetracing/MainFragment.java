@@ -33,7 +33,7 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
-import com.example.piotr.streetracing.MyLocation.LocationResult;
+//import com.example.piotr.streetracing.MyLocation.LocationResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -81,7 +81,7 @@ public class MainFragment extends Fragment {
                     MapboxMap mapboxMap;
                     toggleGps(!map.isMyLocationEnabled());
                     //Lokazlicazja
-                    LocationResult locationResult = new LocationResult(){
+                    /*LocationResult locationResult = new LocationResult(){
                         @Override
                         public void gotLocation(Location location){
                             //Got the location!
@@ -92,7 +92,7 @@ public class MainFragment extends Fragment {
                     };
                     MyLocation myLocation = new MyLocation();
                     myLocation.getLocation(getActivity(), locationResult);
-                    /*CameraPosition cameraPosition = new CameraPosition.Builder()
+                    CameraPosition cameraPosition = new CameraPosition.Builder()
                             .target(new LatLng(Double.parseDouble(current_location_latitude),Double.parseDouble(current_location_longitude)))
                             .zoom(17)
                             .build();
@@ -158,6 +158,7 @@ public class MainFragment extends Fragment {
             if (!locationServices.areLocationPermissionsGranted()) {
                 ActivityCompat.requestPermissions(getActivity(), new String[]{
                         Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.LOCATION_HARDWARE,
                         Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS);
             } else {
                 enableLocation(true);
@@ -172,19 +173,21 @@ public class MainFragment extends Fragment {
             // If we have the last location of the user, we can move the camera to that position.
             Location lastLocation = locationServices.getLastLocation();
             if (lastLocation != null) {
-                map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastLocation), 15));
+                map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(lastLocation)));
             }
 
             locationServices.addLocationListener(new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
                     if (location != null) {
-                        // Move the map camera to where the user location is and then remove the
-                        // listener so the camera isn't constantly updating when the user location
-                        // changes. When the user disables and then enables the location again, this
-                        // listener is registered again and will adjust the camera once again.
-                        //map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
-                        locationServices.removeLocationListener(this);
+                        /* Move the map camera to where the user location is and then remove the
+                         *listener so the camera isn't constantly updating when the user location
+                         *changes. When the user disables and then enables the location again, this
+                         *listener is registered again and will adjust the camera once again.
+                         */
+
+                        map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(location)));
+                        //locationServices.removeLocationListener(this);
                     }
                 }
             });

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:orientation="vertical"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/rounded_corners"
@@ -21,42 +21,39 @@ android:orientation="vertical"
             android:layout_weight="3"
             android:id="@+id/map_box"
             android:layout_margin="3dip"
-            android:background="@drawable/rounded_corners1"
-            />
+            android:background="@drawable/rounded_corners1" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dip"
             android:layout_weight="1">
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hoplophile"
                 android:textSize="20sp"
-                android:id="@+id/username"
-               />
+                android:id="@+id/username" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/username"
-
                 android:layout_marginLeft="3dip"
                 android:text="21:37"
                 android:textSize="12sp"
                 android:id="@+id/date"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginRight="5dip"
-
                 android:layout_below="@id/date"
                 android:layout_marginBottom="10dip"
-
-
                 android:padding="8dip" >
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,24 +69,14 @@ android:orientation="vertical"
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Segment 3 : 39:39:69"/>
+                    android:text="Segment 4 : 39:39:69"/>
 
             </LinearLayout>
 
-
         </RelativeLayout>
-
-
-
-
-
-
-
 
     </LinearLayout>
 
-
-
-    </RelativeLayout>
+</RelativeLayout>
 
 
